@@ -6,7 +6,7 @@ public class Main {
         frame.setContentPane(new Login().Inicio_Sesion);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
-        frame.setSize(800,1200);
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setVisible(true);
 
     }
