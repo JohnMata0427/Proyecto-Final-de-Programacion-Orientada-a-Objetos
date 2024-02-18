@@ -97,7 +97,7 @@
                     </constraints>
                     <properties>
                       <background color="-12557932"/>
-                      <text value="RadioButton"/>
+                      <text value="Ver Paciente"/>
                     </properties>
                   </component>
                   <component id="eeba6" class="javax.swing.JRadioButton" default-binding="true">
@@ -106,7 +106,7 @@
                     </constraints>
                     <properties>
                       <background color="-12557932"/>
-                      <text value="RadioButton"/>
+                      <text value="Registrar Cita"/>
                     </properties>
                   </component>
                   <component id="5eacd" class="javax.swing.JRadioButton" default-binding="true">
@@ -115,7 +115,7 @@
                     </constraints>
                     <properties>
                       <background color="-12557932"/>
-                      <text value="RadioButton"/>
+                      <text value="Historial Medico"/>
                     </properties>
                   </component>
                   <component id="2abbe" class="javax.swing.JRadioButton" default-binding="true">
@@ -124,7 +124,7 @@
                     </constraints>
                     <properties>
                       <background color="-12557932"/>
-                      <text value="RadioButton"/>
+                      <text value="Resultados De Examenes"/>
                     </properties>
                   </component>
                   <vspacer id="df5cf">

@@ -170,7 +170,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="f05c9" class="javax.swing.JButton" binding="verCitaButton" default-binding="true">
+                  <component id="f05c9" class="javax.swing.JButton" binding="verPacientesButton" default-binding="true">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -178,7 +178,7 @@
                       <background color="-12557932"/>
                       <font name="Berlin Sans FB Demi" size="28" style="1"/>
                       <foreground color="-1"/>
-                      <text value="Ver Cita"/>
+                      <text value="Ver Pacientes"/>
                     </properties>
                   </component>
                 </children>

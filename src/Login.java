@@ -1,6 +1,8 @@
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Login {
     JPanel Inicio_Sesion;
@@ -54,5 +56,12 @@ public class Login {
 
         Border roundBorde = new RoundedBorder(100);
         Contenedor.setBorder(roundBorde);
+        ingresarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.ventanaBase.setContentPane(new Modulos().JPanelModulos);
+                Main.ventanaBase.revalidate();
+            }
+        });
     }
 }
