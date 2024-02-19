@@ -17,12 +17,14 @@ public class Modulos {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Main.ventanaBase.setContentPane(new Pacientes_Registrados().Pacientes);
+                Main.ventanaBase.revalidate();
             }
         });
         registrarCitaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Main.ventanaBase.setContentPane(new RegistrarCita().RegistrarCitaPanel);
+                Main.ventanaBase.revalidate();
             }
         });
     }

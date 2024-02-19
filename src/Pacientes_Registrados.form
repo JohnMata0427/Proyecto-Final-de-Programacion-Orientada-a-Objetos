@@ -91,25 +91,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="cefdf" class="javax.swing.JRadioButton" default-binding="true">
-                    <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                    </constraints>
-                    <properties>
-                      <background color="-12557932"/>
-                      <text value="Ver Paciente"/>
-                    </properties>
-                  </component>
-                  <component id="eeba6" class="javax.swing.JRadioButton" default-binding="true">
-                    <constraints>
-                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                    </constraints>
-                    <properties>
-                      <background color="-12557932"/>
-                      <text value="Registrar Cita"/>
-                    </properties>
-                  </component>
-                  <component id="5eacd" class="javax.swing.JRadioButton" default-binding="true">
+                  <component id="5eacd" class="javax.swing.JRadioButton" binding="HistorialMedicoRB">
                     <constraints>
                       <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -118,7 +100,7 @@
                       <text value="Historial Medico"/>
                     </properties>
                   </component>
-                  <component id="2abbe" class="javax.swing.JRadioButton" default-binding="true">
+                  <component id="2abbe" class="javax.swing.JRadioButton" binding="ResultadosRB">
                     <constraints>
                       <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -132,6 +114,34 @@
                       <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                     </constraints>
                   </vspacer>
+                  <component id="cefdf" class="javax.swing.JRadioButton" binding="VerPacienteRB">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                        <preferred-size width="150" height="21"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <background color="-12557932"/>
+                      <text value="Ver Paciente"/>
+                    </properties>
+                  </component>
+                  <component id="eeba6" class="javax.swing.JRadioButton" binding="RegistrarCitaRB">
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-12557932"/>
+                      <text value="Registrar Cita"/>
+                    </properties>
+                  </component>
+                  <component id="25cdd" class="javax.swing.JButton" binding="volverButton" default-binding="true">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <text value="Modulos"/>
+                    </properties>
+                  </component>
                 </children>
               </grid>
               <grid id="4330c" layout-manager="GridLayoutManager" row-count="3" column-count="8" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -167,11 +177,6 @@
                     <border type="none"/>
                     <children/>
                   </grid>
-                  <hspacer id="e43e3">
-                    <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                    </constraints>
-                  </hspacer>
                   <hspacer id="c75e5">
                     <constraints>
                       <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>

@@ -93,40 +93,31 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="2b162" class="javax.swing.JRadioButton" default-binding="true">
+                  <component id="2b162" class="javax.swing.JRadioButton" binding="VerPacienteRB">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <background color="-12557932"/>
-                      <text value="RadioButton"/>
+                      <text value="Ver Paciente"/>
                     </properties>
                   </component>
-                  <component id="e4756" class="javax.swing.JRadioButton" default-binding="true">
-                    <constraints>
-                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                    </constraints>
-                    <properties>
-                      <background color="-12557932"/>
-                      <text value="RadioButton"/>
-                    </properties>
-                  </component>
-                  <component id="a0123" class="javax.swing.JRadioButton" default-binding="true">
+                  <component id="a0123" class="javax.swing.JRadioButton" binding="HistorialMedicoRB">
                     <constraints>
                       <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <background color="-12557932"/>
-                      <text value="RadioButton"/>
+                      <text value="Historial Medico"/>
                     </properties>
                   </component>
-                  <component id="7d069" class="javax.swing.JRadioButton" default-binding="true">
+                  <component id="7d069" class="javax.swing.JRadioButton" binding="ResultadosRB">
                     <constraints>
                       <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <background color="-12557932"/>
-                      <text value="RadioButton"/>
+                      <text value="Resultados de Examenes"/>
                     </properties>
                   </component>
                   <vspacer id="7ca89">
@@ -134,6 +125,23 @@
                       <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                     </constraints>
                   </vspacer>
+                  <component id="e4756" class="javax.swing.JRadioButton" binding="RegistrarCitaRB">
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <background color="-12557932"/>
+                      <text value="Registrar Cita"/>
+                    </properties>
+                  </component>
+                  <component id="76e83" class="javax.swing.JButton" binding="volverButton" default-binding="true">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <text value="Modulos"/>
+                    </properties>
+                  </component>
                 </children>
               </grid>
               <grid id="1a923" layout-manager="GridLayoutManager" row-count="2" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">

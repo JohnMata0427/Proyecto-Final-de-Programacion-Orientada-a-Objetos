@@ -1,11 +1,18 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class RegistrarCita {
     public JPanel RegistrarCitaPanel;
     private JLabel LogoRegistro;
     private JButton cerrarSesiónButton;
     private JLabel NombreUsuario;
+    private JRadioButton VerPacienteRB;
+    private JRadioButton RegistrarCitaRB;
+    private JRadioButton HistorialMedicoRB;
+    private JRadioButton ResultadosRB;
+    private JButton volverButton;
 
     public RegistrarCita() {
 
@@ -16,5 +23,48 @@ public class RegistrarCita {
         ImageIcon imagen = new ImageIcon(tamaño);
 
         LogoRegistro.setIcon(imagen);
+
+
+        ButtonGroup GrupoModulos = new ButtonGroup();
+        GrupoModulos.add(VerPacienteRB);
+        GrupoModulos.add(RegistrarCitaRB);
+        GrupoModulos.add(HistorialMedicoRB);
+        GrupoModulos.add(ResultadosRB);
+
+        VerPacienteRB.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.ventanaBase.setContentPane(new Pacientes_Registrados().Pacientes);
+                Main.ventanaBase.revalidate();
+            }
+        });
+
+        RegistrarCitaRB.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.ventanaBase.setContentPane(new RegistrarCita().RegistrarCitaPanel);
+                Main.ventanaBase.revalidate();
+            }
+        });
+        HistorialMedicoRB.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        ResultadosRB.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        volverButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.ventanaBase.setContentPane(new Modulos().JPanelModulos);
+                Main.ventanaBase.revalidate();
+            }
+        });
     }
 }
