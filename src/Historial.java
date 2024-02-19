@@ -1,30 +1,19 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class RegistrarCita {
-    public JPanel RegistrarCitaPanel;
+public class Historial {
     private JLabel LogoRegistro;
-    private JButton cerrarSesiónButton;
     private JLabel NombreUsuario;
-    private JRadioButton VerPacienteRB;
-    private JRadioButton RegistrarCitaRB;
+    private JButton cerrarSesiónButton;
     private JRadioButton HistorialMedicoRB;
     private JRadioButton ResultadosRB;
+    private JRadioButton VerPacienteRB;
+    private JRadioButton RegistrarCitaRB;
     private JButton volverButton;
-
-    public RegistrarCita() {
-
-
-        ImageIcon imageIcon = new ImageIcon("src/imgs/MediCare_Logo.png"); /*XD*/
-        Image img = imageIcon.getImage();
-        Image tamaño = img.getScaledInstance(200, 50, Image.SCALE_SMOOTH);
-        ImageIcon imagen = new ImageIcon(tamaño);
-
-        LogoRegistro.setIcon(imagen);
-
-
+    private JTextField textField1;
+    JPanel HistorialForm;
+    public Historial(){
         ButtonGroup GrupoModulos = new ButtonGroup();
         GrupoModulos.add(VerPacienteRB);
         GrupoModulos.add(RegistrarCitaRB);

@@ -27,5 +27,19 @@ public class Modulos {
                 Main.ventanaBase.revalidate();
             }
         });
+        resultadoDeExamenesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.ventanaBase.setContentPane(new Resultados().ResultadosForm);
+                Main.ventanaBase.revalidate();
+            }
+        });
+        historialMedicoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.ventanaBase.setContentPane(new Historial().HistorialForm);
+                Main.ventanaBase.revalidate();
+            }
+        });
     }
 }

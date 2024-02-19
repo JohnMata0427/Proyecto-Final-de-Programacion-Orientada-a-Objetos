@@ -37,17 +37,19 @@ public class Pacientes_Registrados {
                 Main.ventanaBase.revalidate();
             }
         });
-
         HistorialMedicoRB.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                Main.ventanaBase.setContentPane(new Historial().HistorialForm);
+                Main.ventanaBase.revalidate();
             }
         });
+
         ResultadosRB.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                Main.ventanaBase.setContentPane(new Resultados().ResultadosForm);
+                Main.ventanaBase.revalidate();
             }
         });
         volverButton.addActionListener(new ActionListener() {

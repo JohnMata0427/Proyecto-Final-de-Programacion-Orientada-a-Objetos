@@ -27,7 +27,7 @@
               </grid>
             </constraints>
             <properties>
-              <icon value="MediCare_Logo.png"/>
+              <icon value="imgs/MediCare_Logo.png"/>
               <text value=""/>
             </properties>
           </component>

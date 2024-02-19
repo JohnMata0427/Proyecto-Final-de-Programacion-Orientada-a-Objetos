@@ -38,7 +38,7 @@ public class Login {
     public Login(){
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension dimension = toolkit.getScreenSize();
-        ImageIcon imageIcon = new ImageIcon("src/Imagen_Fondo_Login.png"); /*XD*/
+        ImageIcon imageIcon = new ImageIcon("src/imgs/Imagen_Fondo_Login.png"); /*XD*/
         int alto = dimension.height;
         Image img = imageIcon.getImage();
         Image tamaño = img.getScaledInstance(800,alto,Image.SCALE_SMOOTH);

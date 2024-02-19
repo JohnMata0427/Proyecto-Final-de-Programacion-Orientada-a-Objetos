@@ -1,30 +1,22 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.MissingFormatArgumentException;
 
-public class RegistrarCita {
-    public JPanel RegistrarCitaPanel;
+public class Resultados {
     private JLabel LogoRegistro;
-    private JButton cerrarSesiónButton;
     private JLabel NombreUsuario;
+    private JButton cerrarSesiónButton;
     private JRadioButton VerPacienteRB;
-    private JRadioButton RegistrarCitaRB;
     private JRadioButton HistorialMedicoRB;
     private JRadioButton ResultadosRB;
+    private JRadioButton RegistrarCitaRB;
     private JButton volverButton;
+    private JTextArea textArea1;
+    private JTextArea textArea2;
+    JPanel ResultadosForm;
 
-    public RegistrarCita() {
-
-
-        ImageIcon imageIcon = new ImageIcon("src/imgs/MediCare_Logo.png"); /*XD*/
-        Image img = imageIcon.getImage();
-        Image tamaño = img.getScaledInstance(200, 50, Image.SCALE_SMOOTH);
-        ImageIcon imagen = new ImageIcon(tamaño);
-
-        LogoRegistro.setIcon(imagen);
-
-
+    public Resultados(){
         ButtonGroup GrupoModulos = new ButtonGroup();
         GrupoModulos.add(VerPacienteRB);
         GrupoModulos.add(RegistrarCitaRB);
