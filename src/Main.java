@@ -5,6 +5,7 @@ public class Main {
     static JPanel login = new Login().Inicio_Sesion;
     static JPanel moduloAdmin = new Modulos("admin").Modulos;
     static JPanel moduloMedico = new Modulos("medico").Modulos;
+    static JPanel pacientes =   new Pacientes_Registrados().Pacientes;
     static String usuario = "";
     static String correo = "";
     public static void main(String[] args) {

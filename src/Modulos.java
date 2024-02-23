@@ -30,5 +30,11 @@ public class Modulos {
             Main.ventanaBase.setContentPane(Main.login);
             Main.ventanaBase.revalidate();
         });
+
+        verPacientesButton.addActionListener(e -> {
+            Main.ventanaBase.setContentPane(Main.pacientes);
+            Main.ventanaBase.validate();
+        });
+
     }
 }

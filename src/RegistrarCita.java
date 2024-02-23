@@ -32,7 +32,7 @@ public class RegistrarCita {
         VerPacienteRB.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.ventanaBase.setContentPane(new Pacientes_Registrados().Pacientes);
+                Main.ventanaBase.setContentPane(Main.pacientes);
                 Main.ventanaBase.revalidate();
             }
         });
@@ -59,12 +59,9 @@ public class RegistrarCita {
                 Main.ventanaBase.revalidate();
             }
         });
-        volverButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        volverButton.addActionListener(e -> {
                 Main.ventanaBase.setContentPane(Main.moduloAdmin);
                 Main.ventanaBase.revalidate();
-            }
         });
     }
 }
