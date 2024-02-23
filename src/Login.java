@@ -1,67 +1,29 @@
 import javax.swing.*;
-import javax.swing.border.Border;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.sql.ResultSet;
 
 public class Login {
     JPanel Inicio_Sesion;
-    private JLabel ImagenInicio;
-    private JPanel Contenedor;
     private JTextField textField1;
+    private JPanel Contenedor;
+    private JPanel contenedorCredenciales;
+    private JLabel ImagenInicio;
     private JPasswordField passwordField1;
     private JButton ingresarButton;
-    private JPanel contenedorCredenciales;
-
-    static class RoundedBorder implements Border{
-        private int radio;
-        public RoundedBorder(int radio){
-            this.radio=radio;
-        }
-
-        @Override
-        public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
-            Graphics2D graphics2D = (Graphics2D) g;
-            //graphics2D.setColor(Color.BLACK);
-            graphics2D.drawRoundRect(x, y, width , height, radio, radio);
-        }
-        @Override
-        public Insets getBorderInsets(Component c) {
-            return new Insets(radio,radio,radio,radio);
-        }
-        @Override
-        public boolean isBorderOpaque() {
-            return false;
-        }
-    }
-
-    public Login(){
-        Toolkit toolkit = Toolkit.getDefaultToolkit();
-        Dimension dimension = toolkit.getScreenSize();
-        ImageIcon imageIcon = new ImageIcon("src/imgs/Imagen_Fondo_Login.png"); /*XD*/
-        int alto = dimension.height;
-        Image img = imageIcon.getImage();
-        Image tamaño = img.getScaledInstance(800,alto,Image.SCALE_SMOOTH);
-        ImageIcon imagen=new ImageIcon(tamaño);
-        ImagenInicio.setIcon(imagen);
-
-        Contenedor.setPreferredSize(new Dimension(500,500));
-        Contenedor.revalidate();
-        Contenedor.repaint();
-
-        contenedorCredenciales.setPreferredSize(new Dimension(250,250));
-        contenedorCredenciales.revalidate();
-        contenedorCredenciales.repaint();
-
-
-        Border roundBorde = new RoundedBorder(100);
-        Contenedor.setBorder(roundBorde);
-        ingresarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Main.ventanaBase.setContentPane(new Modulos().JPanelModulos);
-                Main.ventanaBase.revalidate();
-            }
+    public Login (){
+        ingresarButton.addActionListener(e -> {
+            try {
+                ResultSet resultado = Conexion.ejecutarQuery("SELECT * FROM usuarios WHERE usuario = '" + textField1.getText() + "' or correo = '" + textField1.getText() + "'  AND contraseña = '" + String.valueOf(passwordField1.getPassword()) + "'");
+                resultado.next();
+                Main.usuario = resultado.getString("Usuario");
+                Main.correo = resultado.getString("Correo");
+                if (resultado.getString("Tipo_Usuario").equals("A")) {
+                    Main.ventanaBase.setContentPane(Main.moduloAdmin); // Modulos es el JPanel que contiene la interfaz de los modulos
+                    Main.ventanaBase.validate(); // Actualiza el contenido de la ventana
+                } else {
+                    Main.ventanaBase.setContentPane(Main.moduloMedico); // Modulos es el JPanel que contiene la interfaz de los modulos
+                    Main.ventanaBase.validate(); // Actualiza el contenido de la ventana
+                }
+            } catch (Exception ex) {JOptionPane.showMessageDialog(null, "Error: " + ex);}
         });
     }
 }

@@ -15,8 +15,6 @@ public class RegistrarCita {
     private JButton volverButton;
 
     public RegistrarCita() {
-
-
         ImageIcon imageIcon = new ImageIcon("src/imgs/MediCare_Logo.png"); /*XD*/
         Image img = imageIcon.getImage();
         Image tamaño = img.getScaledInstance(200, 50, Image.SCALE_SMOOTH);
@@ -64,7 +62,7 @@ public class RegistrarCita {
         volverButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.ventanaBase.setContentPane(new Modulos().JPanelModulos);
+                Main.ventanaBase.setContentPane(Main.moduloAdmin);
                 Main.ventanaBase.revalidate();
             }
         });

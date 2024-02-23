@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.MissingFormatArgumentException;
 
 public class Resultados {
     private JLabel LogoRegistro;
@@ -56,7 +55,7 @@ public class Resultados {
         volverButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.ventanaBase.setContentPane(new Modulos().JPanelModulos);
+                Main.ventanaBase.setContentPane(Main.moduloAdmin);
                 Main.ventanaBase.revalidate();
             }
         });

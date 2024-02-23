@@ -55,7 +55,7 @@ public class Pacientes_Registrados {
         volverButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.ventanaBase.setContentPane(new Modulos().JPanelModulos);
+                Main.ventanaBase.setContentPane(Main.moduloAdmin);
                 Main.ventanaBase.revalidate();
             }
         });

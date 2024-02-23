@@ -3,7 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Modulos {
-    JPanel JPanelModulos;
+    JPanel Modulos;
     private JLabel LogoRegistro;
     private JLabel NombreUsuario;
     private JButton cerrarSesiónButton;
@@ -11,35 +11,24 @@ public class Modulos {
     private JButton registrarCitaButton;
     private JButton resultadoDeExamenesButton;
     private JButton historialMedicoButton;
+    private JPanel moduloPacientes;
+    private JLabel CorreoUsuario;
+    private JLabel imagenPacientes;
 
-    public Modulos() {
-        verPacientesButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Main.ventanaBase.setContentPane(new Pacientes_Registrados().Pacientes);
-                Main.ventanaBase.revalidate();
-            }
-        });
-        registrarCitaButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Main.ventanaBase.setContentPane(new RegistrarCita().RegistrarCitaPanel);
-                Main.ventanaBase.revalidate();
-            }
-        });
-        resultadoDeExamenesButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Main.ventanaBase.setContentPane(new Resultados().ResultadosForm);
-                Main.ventanaBase.revalidate();
-            }
-        });
-        historialMedicoButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Main.ventanaBase.setContentPane(new Historial().HistorialForm);
-                Main.ventanaBase.revalidate();
-            }
+    public Modulos(String usuario) {
+        NombreUsuario.setText(Main.usuario);
+        CorreoUsuario.setText(Main.correo);
+        System.out.println(Main.usuario);
+        System.out.println(Main.correo);
+        if (usuario.equals("admin")) Main.ventanaBase.setTitle("Módulos - Administrador");
+        else {
+            moduloPacientes.setVisible(false);
+            Main.ventanaBase.setTitle("Módulos - Médico");
+        }
+
+        cerrarSesiónButton.addActionListener(e -> {
+            Main.ventanaBase.setContentPane(Main.login);
+            Main.ventanaBase.revalidate();
         });
     }
 }

@@ -43,19 +43,13 @@ public class Historial {
             }
         });
 
-        ResultadosRB.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Main.ventanaBase.setContentPane(new Resultados().ResultadosForm);
-                Main.ventanaBase.revalidate();
-            }
+        ResultadosRB.addActionListener(e -> {
+            Main.ventanaBase.setContentPane(new Resultados().ResultadosForm);
+            Main.ventanaBase.revalidate();
         });
-        volverButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Main.ventanaBase.setContentPane(new Modulos().JPanelModulos);
-                Main.ventanaBase.revalidate();
-            }
+        volverButton.addActionListener(e -> {
+            Main.ventanaBase.setContentPane(new Modulos("admin").Modulos);
+            Main.ventanaBase.revalidate();
         });
     }
 }
