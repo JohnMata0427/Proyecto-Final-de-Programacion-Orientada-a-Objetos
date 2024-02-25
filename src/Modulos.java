@@ -1,39 +1,40 @@
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Modulos {
-    JPanel Modulos;
-    private JLabel LogoRegistro;
-    private JLabel NombreUsuario;
-    private JButton cerrarSesiónButton;
+    JPanel panel;
+    private JCheckBox perfilCheckBox;
+    private JLabel usuarioLabel;
+    private JLabel correoLabel;
+    private JButton cerrarSesionButton;
+    private JPanel moduloPacientes;
     private JButton verPacientesButton;
     private JButton registrarCitaButton;
-    private JButton resultadoDeExamenesButton;
+    private JButton resultadosExamenesButton;
     private JButton historialMedicoButton;
-    private JPanel moduloPacientes;
-    private JLabel CorreoUsuario;
-    private JLabel imagenPacientes;
+    private JButton dashboardButton;
+    private JPanel moduloRegistro;
+    private JPanel moduloExamenes;
+    private JPanel moduloHistorial;
+    private JPanel moduloReporte;
 
-    public Modulos(String usuario) {
-        NombreUsuario.setText(Main.usuario);
-        CorreoUsuario.setText(Main.correo);
-        System.out.println(Main.usuario);
-        System.out.println(Main.correo);
-        if (usuario.equals("admin")) Main.ventanaBase.setTitle("Módulos - Administrador");
+    public Modulos() {
+        usuarioLabel.setText(Login.usuario);
+        correoLabel.setText(Login.correo);
+
+        if (Login.tipoUsuario.equals("A")) Main.ventanaBase.setTitle("Módulos - Administrador");
         else {
-            moduloPacientes.setVisible(false);
+            moduloReporte.setVisible(false);
             Main.ventanaBase.setTitle("Módulos - Médico");
         }
 
-        cerrarSesiónButton.addActionListener(e -> {
-            Main.ventanaBase.setContentPane(Main.login);
+        verPacientesButton.addActionListener(e -> {
+            Main.ventanaBase.setContentPane(new Pacientes_Registrados().panel);
             Main.ventanaBase.revalidate();
         });
 
-        verPacientesButton.addActionListener(e -> {
-            Main.ventanaBase.setContentPane(Main.pacientes);
-            Main.ventanaBase.validate();
+        cerrarSesionButton.addActionListener(e -> {
+            Main.ventanaBase.setContentPane(Main.loginPanel);
+            Main.ventanaBase.revalidate();
         });
 
     }

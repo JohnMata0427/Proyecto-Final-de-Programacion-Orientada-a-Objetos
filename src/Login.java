@@ -2,27 +2,30 @@ import javax.swing.*;
 import java.sql.ResultSet;
 
 public class Login {
-    JPanel Inicio_Sesion;
-    private JTextField textField1;
-    private JPanel Contenedor;
-    private JPanel contenedorCredenciales;
-    private JLabel ImagenInicio;
-    private JPasswordField passwordField1;
+    JPanel panel;
+    private JTextField usuarioField;
+    private JPasswordField contraseñaField;
     private JButton ingresarButton;
-    public Login (){
+    static String usuario, correo, tipoUsuario;
+    public Login () {
         ingresarButton.addActionListener(e -> {
             try {
-                ResultSet resultado = Conexion.ejecutarQuery("SELECT * FROM usuarios WHERE usuario = '" + textField1.getText() + "' or correo = '" + textField1.getText() + "'  AND contraseña = '" + String.valueOf(passwordField1.getPassword()) + "'");
+                ResultSet resultado = Conexion.ejecutarQuery("SELECT * FROM usuarios WHERE (usuario = '" + usuarioField.getText() + "' or correo = '" + usuarioField.getText() + "')  AND contraseña = '" + String.valueOf(contraseñaField.getPassword()) + "'");
+                assert resultado != null;
                 resultado.next();
-                Main.usuario = resultado.getString("Usuario");
-                Main.correo = resultado.getString("Correo");
+                usuario = resultado.getString("Usuario");
+                correo = resultado.getString("Correo");
+                tipoUsuario = resultado.getString("Tipo_Usuario");
+
                 if (resultado.getString("Tipo_Usuario").equals("A")) {
-                    Main.ventanaBase.setContentPane(Main.moduloAdmin); // Modulos es el JPanel que contiene la interfaz de los modulos
+                    Main.ventanaBase.setContentPane(new Modulos().panel); // Modulos es el JPanel que contiene la interfaz de los modulos
                     Main.ventanaBase.validate(); // Actualiza el contenido de la ventana
                 } else {
-                    Main.ventanaBase.setContentPane(Main.moduloMedico); // Modulos es el JPanel que contiene la interfaz de los modulos
+                    Main.ventanaBase.setContentPane(new Modulos().panel); // Modulos es el JPanel que contiene la interfaz de los modulos
                     Main.ventanaBase.validate(); // Actualiza el contenido de la ventana
                 }
+                usuarioField.setText("");
+                contraseñaField.setText("");
             } catch (Exception ex) {JOptionPane.showMessageDialog(null, "Error: " + ex);}
         });
     }

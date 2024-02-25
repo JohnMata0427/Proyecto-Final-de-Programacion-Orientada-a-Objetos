@@ -23,7 +23,7 @@ public class Historial {
         VerPacienteRB.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.ventanaBase.setContentPane(new Pacientes_Registrados().Pacientes);
+                Main.ventanaBase.setContentPane(new Pacientes_Registrados().panel);
                 Main.ventanaBase.revalidate();
             }
         });
@@ -48,7 +48,7 @@ public class Historial {
             Main.ventanaBase.revalidate();
         });
         volverButton.addActionListener(e -> {
-            Main.ventanaBase.setContentPane(new Modulos("admin").Modulos);
+            Main.ventanaBase.setContentPane(new Modulos().panel);
             Main.ventanaBase.revalidate();
         });
     }

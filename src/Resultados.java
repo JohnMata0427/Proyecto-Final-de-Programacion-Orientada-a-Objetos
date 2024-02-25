@@ -25,7 +25,7 @@ public class Resultados {
         VerPacienteRB.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.ventanaBase.setContentPane(new Pacientes_Registrados().Pacientes);
+                Main.ventanaBase.setContentPane(new Pacientes_Registrados().panel);
                 Main.ventanaBase.revalidate();
             }
         });
@@ -55,7 +55,7 @@ public class Resultados {
         volverButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.ventanaBase.setContentPane(Main.moduloAdmin);
+                Main.ventanaBase.setContentPane(new Modulos().panel);
                 Main.ventanaBase.revalidate();
             }
         });
