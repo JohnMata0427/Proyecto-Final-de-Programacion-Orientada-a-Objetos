@@ -2,7 +2,7 @@ import java.sql.*;
 public class Conexion {
     static ResultSet ejecutarQuery(String sql){
         try {
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3307/medicare", "root", "1726405390"); // Cambiar la contraseña por la que se tenga en MySQL
+            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/medicare", "root", "A2lejx0227"); // Cambiar la contraseña por la que se tenga en MySQL
             Statement statement = conexion.createStatement(); // Se crea un jeto Statement para poder ejecutar las consultas
             return statement.executeQuery(sql); // Se ejecuta la consulta y se retorna el robesultado
         } catch (Exception e) {
@@ -12,7 +12,7 @@ public class Conexion {
     }
     static PreparedStatement insertarDatos(String sql){
         try {
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3307/medicare", "root", "1726405390"); // Cambiar la contraseña por la que se tenga en MySQL
+            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/medicare", "root", "A2lejx0227"); // Cambiar la contraseña por la que se tenga en MySQL
             return conexion.prepareStatement(sql);
         } catch (Exception exception){
             System.out.println("Error: " + exception);

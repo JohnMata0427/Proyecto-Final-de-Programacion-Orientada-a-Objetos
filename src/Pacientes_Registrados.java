@@ -103,9 +103,24 @@ public class Pacientes_Registrados {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try{
-                    PreparedStatement = Conexion.insertarDatos("INSERT INTO Clientes VALUES(?,?,?,?,?,?,?)");
+                    PreparedStatement preparedStatement= Conexion.insertarDatos("INSERT INTO Clientes VALUES(?,?,?,?,?,?,?,?)");
+                    assert preparedStatement != null;
+                    preparedStatement.setInt(1, Integer.parseInt(cedulaField.getText()));
+                    preparedStatement.setString(2, nombreField.getText());
+                    preparedStatement.setString(3, correoField.getText());
+                    preparedStatement.setInt(4,Integer.parseInt(telefonoField.getText()));
+                    preparedStatement.setString(5, String.valueOf(sexoComboBox.getSelectedItem()));
+                    preparedStatement.setString(6, alergiasField.getText());
+                    preparedStatement.setInt(7, Integer.parseInt(estaturaField.getText()));
+                    preparedStatement.setDouble(8, Double.parseDouble(pesoField.getText()));
+                    int filasAfectadas = preparedStatement.executeUpdate();
+                    if (filasAfectadas > 0) {
+                        JOptionPane.showMessageDialog(null,"Ingreso de datos exitosa");
+                    } else {
+                        System.out.println("Inserción fallida");
+                    }
                 }catch(Exception ex){
-
+                    System.out.println("Error:" + ex);
                 }
             }
         });
