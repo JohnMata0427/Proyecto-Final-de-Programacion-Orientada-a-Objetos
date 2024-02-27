@@ -23,7 +23,7 @@ public class Modulos {
 
         if (Login.tipoUsuario.equals("A")) Main.ventanaBase.setTitle("Módulos - Administrador");
         else {
-            moduloReporte.setVisible(false);
+            moduloReporte.setVisible(false);// oculta el panel de dashboard al personal medico
             Main.ventanaBase.setTitle("Módulos - Médico");
         }
 

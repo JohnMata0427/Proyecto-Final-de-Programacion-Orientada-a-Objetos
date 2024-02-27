@@ -3,6 +3,9 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 
@@ -96,5 +99,16 @@ public class Pacientes_Registrados {
             Main.ventanaBase.setContentPane(Main.loginPanel);
             Main.ventanaBase.validate();
         });
+        registrarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try{
+                    PreparedStatement = Conexion.insertarDatos("INSERT INTO Clientes VALUES(?,?,?,?,?,?,?)");
+                }catch(Exception ex){
+
+                }
+            }
+        });
+
     }
 }
