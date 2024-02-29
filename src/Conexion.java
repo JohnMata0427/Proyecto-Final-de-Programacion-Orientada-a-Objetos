@@ -1,22 +1,33 @@
+import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 public class Conexion {
-    static ResultSet ejecutarQuery(String sql){
-        try {
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/medicare", "root", "A2lejx0227"); // Cambiar la contraseña por la que se tenga en MySQL
-            Statement statement = conexion.createStatement(); // Se crea un jeto Statement para poder ejecutar las consultas
-            return statement.executeQuery(sql); // Se ejecuta la consulta y se retorna el robesultado
-        } catch (Exception e) {
-            System.out.println("Error al conectar a la base de datos: " + e); // Si hay un error se imprime en consola
-        }
-        return null;
+    final static String url = "jdbc:mysql://localhost:3307/medicare";
+    final static String usuario = "root";
+    final static String contraseña = "12345";
+    static ResultSet ejecutarQuery(String sql) throws SQLException{
+        Connection conexion = DriverManager.getConnection(url, usuario, contraseña); // Cambiar la contraseña por la que se tenga en MySQL
+        Statement statement = conexion.createStatement(); // Se crea un jeto Statement para poder ejecutar las consultas
+        return statement.executeQuery(sql); // Se ejecuta la consulta y se retorna el robesultado
     }
-    static PreparedStatement insertarDatos(String sql){
-        try {
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/medicare", "root", "A2lejx0227"); // Cambiar la contraseña por la que se tenga en MySQL
-            return conexion.prepareStatement(sql);
-        } catch (Exception exception){
-            System.out.println("Error: " + exception);
+    static void insertarDatos(String sql) throws SQLException{
+        Statement statement = DriverManager.getConnection(url, usuario, contraseña).createStatement();
+        statement.executeUpdate(sql);
+    }
+    static DefaultTableModel obtenerModelo(String tabla) throws SQLException {
+        ResultSet resultado = Conexion.ejecutarQuery("SELECT * FROM " + tabla);
+        ResultSetMetaData metaData = resultado.getMetaData();
+        String[] nombreColumnas = new String[metaData.getColumnCount()];
+        for (int i=0; i<metaData.getColumnCount(); i++){
+            nombreColumnas[i] = metaData.getColumnLabel(i+1);
         }
-        return null;
+        DefaultTableModel model = new DefaultTableModel(nombreColumnas, 0);
+        while(resultado.next()){
+            Object[] filas = new Object[metaData.getColumnCount()];
+            for (int i=0; i<metaData.getColumnCount(); i++){
+                filas[i] = resultado.getObject(i+1);
+            }
+            model.addRow(filas);
+        }
+        return model;
     }
 }

@@ -35,8 +35,7 @@ SELECT * FROM Medicos;
 
 CREATE TABLE Clientes(
 Cedula numeric(10) primary key not null,
-Nombres varchar(50) not null,
-Apellidos varchar(50) not null,
+NombresCompleto varchar(50) not null,
 Correo varchar(50),
 Telefono numeric(10) unique,
 Sexo varchar(1) not null,
@@ -45,9 +44,9 @@ Estatura numeric(3) check (Estatura<250),
 Peso numeric(3) check (Peso<300)
 );
 INSERT INTO Clientes VALUES
-(1234567890, 'Nombres', 'Apellidos', 'Correo@gmail.com', 0987654321, 'H', 'Ninguna', 185, 80),
-(1751046745, 'Ander', 'Campoverde', 'Ander@gmail.com', 0987654321, 'H', 'Ninguna', 185, 80);
-(1751046746, 'Jesenia', 'Pazto', 'Jesenia@gmail.com', 0987654321, 'M', 'Ninguna', 160, 60);
+(1234567890, 'Nombres Apellidos', 'Correo@gmail.com', 0987654321, 'H', 'Ninguna', 185, 80),
+(1751046745, 'Ander Campoverde', 'Ander@gmail.com', 0987654321, 'H', 'Ninguna', 185, 80);
+(1751046746, 'Jesenia Pazto', 'Jesenia@gmail.com', 0987654321, 'M', 'Ninguna', 160, 60);
 
 
 

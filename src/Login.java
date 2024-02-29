@@ -23,7 +23,7 @@ public class Login {
 
                 usuarioField.setText("");
                 contraseñaField.setText("");
-            } catch (Exception ex) {JOptionPane.showMessageDialog(null, "Error: " + ex);}
+            } catch (Exception ex) {JOptionPane.showMessageDialog(null, "Error: " + ex, "Error", JOptionPane.ERROR_MESSAGE);}
         });
     }
 }
