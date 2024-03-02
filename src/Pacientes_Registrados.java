@@ -49,8 +49,8 @@ public class Pacientes_Registrados {
     private JButton actualizarButton3;
     private JTable historialTable;
 
-    private void actualizarTabla(String tabla){
-        try {pacientesTable.setModel(Conexion.obtenerModelo(tabla));} catch (Exception ex){JOptionPane.showMessageDialog(null, "Error: " + ex, "Error", JOptionPane.ERROR_MESSAGE);}
+    private void actualizarTabla(String sqlTable, JTable jTable){
+        try {jTable.setModel(Conexion.obtenerModelo(sqlTable));} catch (Exception ex){JOptionPane.showMessageDialog(null, "Error: " + ex, "Error", JOptionPane.ERROR_MESSAGE);}
     }
     public Pacientes_Registrados() {
         Border lineBorder = BorderFactory.createLineBorder(Color.decode("#7a8a99"), 1);
@@ -88,8 +88,6 @@ public class Pacientes_Registrados {
             Main.ventanaBase.setContentPane(Main.loginPanel);
             Main.ventanaBase.validate();
         });
-        registrarButton.addActionListener(e -> {
-        });
         buscarButton.addActionListener(e -> {
             try{
                 if (buscarField.getText().isEmpty()) JOptionPane.showMessageDialog(null, "El campo de busqueda esta vacio", "Error", JOptionPane.ERROR_MESSAGE);
@@ -108,8 +106,8 @@ public class Pacientes_Registrados {
                 JOptionPane.showMessageDialog(null, "Error: " + ex, "Error", JOptionPane.ERROR_MESSAGE);
             }
         });
-        actualizarTablaButton.addActionListener(e -> actualizarTabla("clientes"));
-        actualizarButton2.addActionListener(e -> actualizarTabla("resultados"));
-        actualizarButton3.addActionListener(e -> actualizarTabla("historialmedico"));
+        actualizarTablaButton.addActionListener(e -> actualizarTabla("clientes", pacientesTable));
+        actualizarButton2.addActionListener(e -> actualizarTabla("resultados", examenesTable));
+        actualizarButton3.addActionListener(e -> actualizarTabla("historialmedico", historialTable));
     }
 }

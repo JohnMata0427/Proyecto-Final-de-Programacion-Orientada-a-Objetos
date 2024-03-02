@@ -10,7 +10,7 @@ public class Login {
     public Login () {
         ingresarButton.addActionListener(e -> {
             try {
-                ResultSet resultado = Conexion.ejecutarQuery("SELECT * FROM usuarios WHERE (usuario = '" + usuarioField.getText() + "' or correo = '" + usuarioField.getText() + "')  AND contraseña = '" + String.valueOf(contraseñaField.getPassword()) + "'");
+                ResultSet resultado = Conexion.visualizarDatos("SELECT * FROM usuarios WHERE (usuario = '" + usuarioField.getText() + "' or correo = '" + usuarioField.getText() + "')  AND contraseña = '" + String.valueOf(contraseñaField.getPassword()) + "'");
                 assert resultado != null; // Si no es nulo se ejecuta el resto del codigo, caso contrario se lanza una excepcion
                 resultado.next();
                 //mostrar usuario y correo de la persona que ingreso

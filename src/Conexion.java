@@ -4,7 +4,7 @@ public class Conexion {
     final static String url = "jdbc:mysql://localhost:3307/medicare";
     final static String usuario = "root";
     final static String contraseña = "12345";
-    static ResultSet ejecutarQuery(String sql) throws SQLException{
+    static ResultSet visualizarDatos(String sql) throws SQLException{
         Connection conexion = DriverManager.getConnection(url, usuario, contraseña); // Cambiar la contraseña por la que se tenga en MySQL
         Statement statement = conexion.createStatement(); // Se crea un jeto Statement para poder ejecutar las consultas
         return statement.executeQuery(sql); // Se ejecuta la consulta y se retorna el robesultado
@@ -14,7 +14,7 @@ public class Conexion {
         statement.executeUpdate(sql);
     }
     static DefaultTableModel obtenerModelo(String tabla) throws SQLException {
-        ResultSet resultado = Conexion.ejecutarQuery("SELECT * FROM " + tabla);
+        ResultSet resultado = Conexion.visualizarDatos("SELECT * FROM " + tabla);
         ResultSetMetaData metaData = resultado.getMetaData();
         String[] nombreColumnas = new String[metaData.getColumnCount()];
         for (int i=0; i<metaData.getColumnCount(); i++){
