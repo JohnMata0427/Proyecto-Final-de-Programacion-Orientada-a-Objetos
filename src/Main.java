@@ -4,7 +4,7 @@ public class Main {
     static JFrame ventanaBase = new JFrame("MediCare");
     static JPanel loginPanel = new Login().panel;
     public static void main(String[] args) {
-        ventanaBase.setContentPane(new Pacientes_Registrados().panel); // Inicio_Sesion es el JPanel que contiene la interfaz de inicio de sesion
+        ventanaBase.setContentPane(loginPanel); // Inicio_Sesion es el JPanel que contiene la interfaz de inicio de sesion
         ventanaBase.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Al cerrar la ventana se termina el programa
         ventanaBase.setIconImage(new ImageIcon("src/imgs/Icon.png").getImage()); // Icono de la ventana
         ventanaBase.pack(); // Ajusta el tamaño de la ventana al tamaño del JPanel

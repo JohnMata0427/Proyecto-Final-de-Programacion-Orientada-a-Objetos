@@ -1,14 +1,9 @@
 
 import javax.swing.*;
 import javax.swing.border.Border;
-import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.util.Objects;
 
 public class Pacientes_Registrados {
     JPanel panel;
@@ -77,7 +72,7 @@ public class Pacientes_Registrados {
         usuarioLabel.setText(Login.usuario);
         correoLabel.setText(Login.correo);
         try {
-            pacientesTable.setModel(Conexion.obtenerModelo("clientes"));
+            pacientesTable.setModel(Conexion.obtenerModelo("pacientes"));
             examenesTable.setModel(Conexion.obtenerModelo("resultados"));
             historialTable.setModel(Conexion.obtenerModelo("historialmedico"));
         } catch (Exception ex){
@@ -91,7 +86,7 @@ public class Pacientes_Registrados {
         buscarButton.addActionListener(e -> {
             try{
                 if (buscarField.getText().isEmpty()) JOptionPane.showMessageDialog(null, "El campo de busqueda esta vacio", "Error", JOptionPane.ERROR_MESSAGE);
-                else pacientesTable.setModel(Conexion.obtenerModelo("clientes WHERE Cedula = " + buscarField.getText()));
+                else pacientesTable.setModel(Conexion.obtenerModelo("Pacientes WHERE Cedula_Paciente = " + buscarField.getText()));
             } catch (Exception ex){
                 JOptionPane.showMessageDialog(null, "Error: " + ex, "Error", JOptionPane.ERROR_MESSAGE);
             }
@@ -101,13 +96,17 @@ public class Pacientes_Registrados {
                 Conexion.insertarDatos("INSERT INTO clientes VALUES("+cedulaField.getText()+",'"+nombreField.getText()+"','"+correoField.getText()+"',"+telefonoField.getText()+",'"+sexoComboBox.getSelectedItem()+"','"+alergiasField.getText()+"',"+estaturaField.getText()+","+pesoField.getText()+")");
                 JOptionPane.showMessageDialog(null, "Paciente registrado con exito", "Exito", JOptionPane.INFORMATION_MESSAGE);
                 nombreField.setText(""); correoField.setText(""); cedulaField.setText(""); telefonoField.setText(""); alergiasField.setText(""); estaturaField.setText(""); pesoField.setText("");
-                pacientesTable.setModel(Conexion.obtenerModelo("clientes"));
+                pacientesTable.setModel(Conexion.obtenerModelo("pacientes"));
             } catch (Exception ex){
                 JOptionPane.showMessageDialog(null, "Error: " + ex, "Error", JOptionPane.ERROR_MESSAGE);
             }
         });
-        actualizarTablaButton.addActionListener(e -> actualizarTabla("clientes", pacientesTable));
+        actualizarTablaButton.addActionListener(e -> actualizarTabla("pacientes", pacientesTable));
         actualizarButton2.addActionListener(e -> actualizarTabla("resultados", examenesTable));
         actualizarButton3.addActionListener(e -> actualizarTabla("historialmedico", historialTable));
+        perfilCheckBox.addActionListener(e ->{
+            Main.ventanaBase.setContentPane(new Perfil().panel);
+            Main.ventanaBase.validate();
+        });
     }
 }

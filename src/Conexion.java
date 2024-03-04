@@ -3,7 +3,7 @@ import java.sql.*;
 public class Conexion {
     final static String url = "jdbc:mysql://localhost:3307/medicare";
     final static String usuario = "root";
-    final static String contraseña = "12345";
+    final static String contraseña = "1726405390";
     static ResultSet visualizarDatos(String sql) throws SQLException{
         Connection conexion = DriverManager.getConnection(url, usuario, contraseña); // Cambiar la contraseña por la que se tenga en MySQL
         Statement statement = conexion.createStatement(); // Se crea un jeto Statement para poder ejecutar las consultas
