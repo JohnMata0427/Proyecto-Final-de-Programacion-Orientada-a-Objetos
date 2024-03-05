@@ -93,7 +93,7 @@ public class Pacientes_Registrados {
         });
         registrarButton.addActionListener(e -> {
             try {
-                Conexion.insertarDatos("INSERT INTO clientes VALUES("+cedulaField.getText()+",'"+nombreField.getText()+"','"+correoField.getText()+"',"+telefonoField.getText()+",'"+sexoComboBox.getSelectedItem()+"','"+alergiasField.getText()+"',"+estaturaField.getText()+","+pesoField.getText()+")");
+                Conexion.insertarDatos("INSERT INTO pacientes VALUES("+cedulaField.getText()+",'"+nombreField.getText()+"','"+correoField.getText()+"',"+telefonoField.getText()+",'"+sexoComboBox.getSelectedItem()+"','"+alergiasField.getText()+"',"+estaturaField.getText()+","+pesoField.getText()+")");
                 JOptionPane.showMessageDialog(null, "Paciente registrado con exito", "Exito", JOptionPane.INFORMATION_MESSAGE);
                 nombreField.setText(""); correoField.setText(""); cedulaField.setText(""); telefonoField.setText(""); alergiasField.setText(""); estaturaField.setText(""); pesoField.setText("");
                 pacientesTable.setModel(Conexion.obtenerModelo("pacientes"));
