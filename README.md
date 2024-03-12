@@ -1,4 +1,5 @@
-<h1 align="center">Sistema de Historial Medico 💻🩺🟦⬜</h1>
+<h1 align="center">Programación Orientada a Objetos</h1>
+<h2 align="center">Sistema de Historial Medico 💻🩺🟦⬜</h2>
 
 ## LOGIN
 
