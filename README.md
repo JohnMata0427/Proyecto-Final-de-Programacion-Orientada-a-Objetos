@@ -1,4 +1,4 @@
-# PROYECTO DE PROGRAMACIÓN ORIENTADA A OBJETOS
+<h1 align="center">Sistema de Historial Medico 💻🩺🟦⬜</h1>
 
 ## LOGIN
 
